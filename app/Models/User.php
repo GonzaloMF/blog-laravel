@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'username',
         'name',
+        'location',
         'email',
         'password',
     ];
@@ -30,7 +32,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
+        //'remember_token',
     ];
 
     /**
@@ -41,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Relationship One to Many (A user can get many posts)
+    public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
+    //At the same time, a post could contain more than one comment
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

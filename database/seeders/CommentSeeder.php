@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Post;
+use App\Models\Comment;
 
 
-class PostTableSeeder extends Seeder
+class CommentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,6 +16,6 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        Post::factory(10)->create();
+        Comment::factory(10)->create();
     }
 }
