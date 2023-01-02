@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            //$table->unsignedBigInteger('post_id')->references('id')->on('post');
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id', 'fk_comments_users')->references('id')->on('users')->onDelete('cascade')
                                                         ->onUpdate('restrict');
