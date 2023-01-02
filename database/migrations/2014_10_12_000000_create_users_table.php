@@ -16,13 +16,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username'); /*That should be unique (->unique()), but I been experiencing some 'Duplicate entry'
-            errors using faker so I removed it for the moment*/
+            //$table->string('username'); /*That should be unique (->unique()), but I been experiencing some 'Duplicate entry'
+            //errors using faker so I removed it for the moment*/
             $table->string('name');
-            $table->string('location');
-            $table->string('email');//Same thing than username
+            $table->string('email')->unique();//Same thing than username
+            //$table->string('location');
+            $table->string('status');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

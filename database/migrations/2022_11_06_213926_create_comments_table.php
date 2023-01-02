@@ -15,9 +15,18 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('post_id')->references('id')->on('post');
-            $table->unsignedBigInteger('user_id')->references('id')->on('users');
-            $table->longText('body');
+            //$table->unsignedBigInteger('post_id')->references('id')->on('post');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id', 'fk_comments_users')->references('id')->on('users')->onDelete('cascade')
+                                                        ->onUpdate('restrict');
+            $table->unsignedBigInteger('posts_id');
+            $table->foreign('posts_id', 'fk_comments_posts')->references('id')->on('posts')->onDelete('cascade')
+                                                        ->onUpdate('restrict');
+            $table->unsignedBigInteger('comments_id')->nullable();
+            $table->foreign('comments_id', 'fk_comments_comments')->references('id')->on('comments')->onDelete('cascade')
+                                                        ->onUpdate('restrict');
+            $table->text('body');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

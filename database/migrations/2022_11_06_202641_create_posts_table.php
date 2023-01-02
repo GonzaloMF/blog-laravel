@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->longText('body');
-
-            //$table->unsignedBigInteger('user_id')->nullable;
-            $table->unsignedBigInteger('user_id')->references('id')->on('users')
-                ->onDelete('set null');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id', 'fk_posts_users')->references('id')->on('users')->onDelete('cascade')
+                                                        ->onUpdate('restrict');
+            $table->string('title', 150);
+            $table->string('slug', 150)->unique();
+            $table->string('description', 255);
+            $table->text('body');
+            $table->boolean('status')->default(1);
+            //$table->unsignedBigInteger('user_id')->references('id')->on('users')->onDelete('set null');
 
             $table->timestamps();
         });
