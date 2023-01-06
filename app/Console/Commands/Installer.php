@@ -60,7 +60,7 @@ class Installer extends Command
     private function createUserSuperAdmin(){
         return User::create([
             'name' => '2026765_Admin',
-            'email' => '2026765@swansea.ac.uk',
+            'email' => 'admin@swansea.ac.uk',
             'password' => Hash::make('12345aA'),
             'status' => 1
         ]);
