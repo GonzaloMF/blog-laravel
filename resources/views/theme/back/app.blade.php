@@ -20,12 +20,17 @@
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="{{asset("assets/back/images/favicon.png")}}"
+      href="{{asset('assets/back/images/favicon.png')}}"
     />
 
     <!-- Custom CSS -->
-    <link href="{{asset("assets/back/css/style.min.css")}}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="{{asset('assets/back/css/style.min.css')}}" rel="stylesheet" />
+    <!-- Plugins -->
+    <link href="{{asset('assets/back/libs/jquery-validation/dist/jquery.validate.min.js')}}" rel="stylesheet" />
+    <!-- link href="{{asset('assets/back/libs/jquery-validation/dist/localization/methods_nl.js')}}" rel="stylesheet" / -->
+
+    <link href="{{asset('assets/back/libs/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
