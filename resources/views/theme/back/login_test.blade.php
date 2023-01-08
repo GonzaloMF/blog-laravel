@@ -49,16 +49,7 @@
       <!-- ============================================================== -->
       <!-- Login box.scss -->
       <!-- ============================================================== -->
-      <div
-        class="
-          auth-wrapper
-          d-flex
-          no-block
-          justify-content-center
-          align-items-center
-          bg-dark
-        "
-      >
+      <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
         <div class="auth-box bg-dark border-top border-secondary">
           <div id="loginform">
             <div class="text-center pt-3 pb-3">
@@ -72,11 +63,9 @@
                 <div class="col-12">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span
-                        class="input-group-text bg-success text-white h-100"
-                        id="basic-addon1"
-                        ><i class="mdi mdi-account fs-4"></i
-                      ></span>
+                        <span class="input-group-text bg-success text-white h-100" id="basic-addon1">
+                            <i class="mdi mdi-account fs-4"></i>
+                        </span>
                     </div>
                     <input
                       type="email"
