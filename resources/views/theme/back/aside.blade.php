@@ -23,7 +23,7 @@
             >
             <ul aria-expanded="false" class="collapse first-level">
               <li class="sidebar-item">
-                <a href="{{route('theme.back.post.form')}}"
+                <a href="{{route('create-post')}}"
                 class="sidebar-link"
                   ><i class="mdi mdi-note-outline"></i
                   ><span class="hide-menu"> Create Post </span></a

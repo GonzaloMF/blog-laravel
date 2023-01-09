@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Backend;
-use App\Models\Backend\Post;
+use App\Models\Post;
+use App\Models\Backend\Tag;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class PostController extends Controller
 {
@@ -13,8 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::get();
-        return view('theme.back.post.index', compact('posts'))
+        //$posts = Post::get();
+        //return view('theme.back.post.index', compact('posts'));
+        return view('theme.back.post.index');
     }
 
     /**
@@ -24,8 +28,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        $tags = Tag::orderBy('id')->pluck('name', 'id');
-        return view('theme.back.post.create', compact('tags'));
+        //$tags = Tag::orderBy('id')->pluck('name', 'id');
+        return view('theme.back.post.form');
+        //return view('theme.back.post.form', compact('tags'));
+
     }
 
     /**

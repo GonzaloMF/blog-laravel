@@ -61,7 +61,7 @@
             <!-- Container fluid  -->
             <div class="container-fluid">
                 @yield('content')
-                <!--@include('theme.back.post.form')-->
+                @include('theme.back.post.form')
             </div>
             <!-- End Container fluid  -->
             <!-- ============================================================== -->

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\Backend\MenuController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Backend\PostController;
 
 
 /*
@@ -37,6 +37,8 @@ Route::post('logout', [LogoutController::class, 'logout'])->name('logout');
 
 /** Admin board */
 Route::get('my-account', [MyAccountController::class, 'index'])->middleware('auth')->name('my-account');
+Route::get('create-post', [PostController::class, 'index'])->middleware('auth')->name('create-post');
+
 
 /** Post */
 Route::get('post', [PostController::class, 'index'])->name('post');
