@@ -32,24 +32,25 @@ class Installer extends Command
     public function handle()
     {
         //return Command::SUCCESS;
-        if(!$this->verify()){
+        if (!$this->verify()) {
             $role = $this->createRolSuperAdmin();
             $user = $this->createUserSuperAdmin();
             //Relation between them (Many to Many)
             $user->roles()->attach($user);
             $this->line('Role and User have been installed correctly');
-
         } else {
             $this->error('Is NOT possible to execute the Installer command because there is a role created');
         }
     }
 
     // We should be aware for duplicate instances, so we should ask first, thats why we create verify() and is used in handle() with a condition
-    private function verify(){
+    private function verify()
+    {
         $role = Role::find(1);
         //return $role->isEmpty();
     }
-    private function createRolSuperAdmin(){
+    private function createRolSuperAdmin()
+    {
         $role = "Super Admin";
         Role::create([
             'name' => $role,
@@ -57,13 +58,13 @@ class Installer extends Command
         ]);
     }
 
-    private function createUserSuperAdmin(){
+    private function createUserSuperAdmin()
+    {
         return User::create([
             'name' => '2026765_Admin',
             'email' => 'admin@swansea.ac.uk',
             'password' => Hash::make('12345aA'),
             'status' => 1
         ]);
-
     }
 }
