@@ -52,15 +52,15 @@ Route::delete('post/{post}/delete', [PostController::class, 'delete'])->name('po
 //Route::group(['prefix' => 'admin-backend', 'middleware' => ['auth', 'superadmin']], function () {
 
     //Routes for menu
-    /*
+
     //Route::get('menu', [MenuController::class, 'index'])->middleware('auth', 'superadmin')->name('menu');
-    Route::get('menu', [MenuController::class, 'index'])->name('menu');
-    Route::get('menu/create', [MenuController::class, 'create'])->name('menu.create');
-    Route::get('menu/{id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
-    Route::post('menu', [MenuController::class, 'save'])->name('menu.save');
-    Route::post('menu/save-order', [MenuController::class, 'saveOrder'])->name('menu.order');
-    Route::put('menu/{id}/update', [MenuController::class, 'update'])->name('update');
-    Route::delete('menu/{id}/delete', [MenuController::class, 'delete'])->name('delete');
-    */
+Route::get('menu', [MenuController::class, 'index'])->name('menu');
+Route::get('menu/create', [MenuController::class, 'create'])->name('menu.create');
+Route::get('menu/{id}/edit', [MenuController::class, 'edit'])->name('menu.edit');
+Route::post('menu', [MenuController::class, 'save'])->name('menu.save');
+Route::post('menu/save-order', [MenuController::class, 'saveOrder'])->name('menu.order');
+Route::put('menu/{id}/update', [MenuController::class, 'update'])->name('update');
+Route::delete('menu/{id}/delete', [MenuController::class, 'delete'])->name('delete');
+
 
 //});

@@ -1,6 +1,6 @@
 <div class="col-sm-9">
   <h1>Create Post</h1>
-  <form action="/submit-post" method="post" class="form-center">
+  <form action="/" method="" class="form-center">
     <div class="form-group">
       <label for="title">Title:</label>
       <input type="text" class="form-control" id="title" name="title">

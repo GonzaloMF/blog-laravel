@@ -16,9 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //$posts = Post::get();
-        //return view('theme.back.post.index', compact('posts'));
-        return view('theme.back.post.index');
+        $posts = Post::get();
+        return view('theme.back.post.index', compact('posts'));
     }
 
     /**
@@ -29,8 +28,8 @@ class PostController extends Controller
     public function create()
     {
         //$tags = Tag::orderBy('id')->pluck('name', 'id');
-        return view('theme.back.post.form');
-        //return view('theme.back.post.form', compact('tags'));
+        //return view('theme.back.post.form');
+        return view('theme.back.post.form', compact('tags'));
 
     }
 
